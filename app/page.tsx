@@ -44,9 +44,17 @@ export default function Home() {
           </div>
 
           <div className="gold-cards-grid">
-            {goldProducts.map((product) => (
-              <GoldCard key={product.id} product={product} />
-            ))}
+            {[...goldProducts]
+              .sort((a, b) => {
+                // Prioritaskan produk tersedia (stock > 0)
+                if (a.stock > 0 && b.stock === 0) return -1;
+                if (a.stock === 0 && b.stock > 0) return 1;
+                // Kemudian urutkan berdasarkan harga
+                return a.totalPrice - b.totalPrice;
+              })
+              .map((product) => (
+                <GoldCard key={product.id} product={product} />
+              ))}
           </div>
         </div>
       </section>
