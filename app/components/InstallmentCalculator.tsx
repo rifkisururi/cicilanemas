@@ -202,9 +202,9 @@ export default function InstallmentCalculator({
 
             {/* Calculation Breakdown */}
             <div className="calculation-breakdown">
-                <div className="calc-row" style={{ background: 'var(--gold-50)', margin: '0 calc(-1 * var(--spacing-lg))', padding: 'var(--spacing-sm) var(--spacing-lg)', fontWeight: '600' }}>
-                    <span className="calc-label">Harga Perolehan Emas</span>
-                    <span className="calc-value">{formatCurrency(hargaPerolehan)}</span>
+                <div className="calc-row" style={{ background: 'var(--calculator-info-bg)', margin: '0 calc(-1 * var(--spacing-lg))', padding: 'var(--spacing-sm) var(--spacing-lg)', fontWeight: '600' }}>
+                    <span className="calc-label" style={{ color: 'var(--text-primary)' }}>Harga Perolehan Emas</span>
+                    <span className="calc-value" style={{ color: 'var(--text-gold)' }}>{formatCurrency(hargaPerolehan)}</span>
                 </div>
                 <div className="calc-row">
                     <span className="calc-label">
@@ -233,24 +233,24 @@ export default function InstallmentCalculator({
             <div style={{
                 marginTop: 'var(--spacing-lg)',
                 padding: 'var(--spacing-lg)',
-                background: 'linear-gradient(135deg, var(--gold-100) 0%, var(--gold-50) 100%)',
+                background: 'var(--calculator-info-bg)',
                 borderRadius: 'var(--radius-lg)',
-                border: '2px solid var(--gold-300)'
+                border: '2px solid var(--calculator-info-border)'
             }}>
-                <p style={{ fontSize: '0.875rem', color: 'var(--gray-600)', marginBottom: 'var(--spacing-sm)' }}>
+                <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: 'var(--spacing-sm)' }}>
                     💳 Dibayar saat pengajuan:
                 </p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--spacing-xs)' }}>
-                    <span style={{ fontSize: '0.875rem' }}>Uang Muka</span>
-                    <span style={{ fontSize: '0.875rem' }}>{formatCurrency(calculation.downPaymentAmount)}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Uang Muka</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>{formatCurrency(calculation.downPaymentAmount)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 'var(--spacing-sm)' }}>
-                    <span style={{ fontSize: '0.875rem' }}>Biaya Admin</span>
-                    <span style={{ fontSize: '0.875rem' }}>{formatCurrency(calculation.adminFeeAmount)}</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Biaya Admin</span>
+                    <span style={{ fontSize: '0.875rem', color: 'var(--text-primary)' }}>{formatCurrency(calculation.adminFeeAmount)}</span>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 'var(--spacing-sm)', borderTop: '1px solid var(--gold-300)' }}>
-                    <span style={{ fontWeight: '700', color: 'var(--gold-800)' }}>TOTAL BAYAR</span>
-                    <span style={{ fontWeight: '700', fontSize: '1.25rem', color: 'var(--gold-700)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 'var(--spacing-sm)', borderTop: '1px solid var(--calculator-info-border)' }}>
+                    <span style={{ fontWeight: '700', color: 'var(--text-gold)' }}>TOTAL BAYAR</span>
+                    <span style={{ fontWeight: '700', fontSize: '1.25rem', color: 'var(--text-gold)' }}>
                         {formatCurrency(bayarSaatPengajuan)}
                     </span>
                 </div>
