@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,16 +22,20 @@ export default function Header() {
                     <Link href="/produk" className="nav-link">Produk</Link>
                     <Link href="/dashboard" className="nav-link">Dashboard</Link>
                     <Link href="/admin" className="nav-link nav-admin">Admin</Link>
+                    <ThemeToggle />
                 </nav>
 
                 {/* Mobile Menu Button */}
-                <button
-                    className="mobile-menu-btn"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
+                    <ThemeToggle />
+                    <button
+                        className="mobile-menu-btn"
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Toggle menu"
+                    >
+                        <span className={`hamburger ${isMenuOpen ? 'open' : ''}`}></span>
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Navigation */}

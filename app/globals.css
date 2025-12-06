@@ -31,12 +31,43 @@
   --danger: #ef4444;
   --info: #3b82f6;
 
-  /* Theme Variables */
+  /* ========== LIGHT MODE (Default) ========== */
   --background: #ffffff;
+  --background-secondary: #f9fafb;
   --foreground: #111827;
+  --foreground-secondary: #4b5563;
+  --foreground-muted: #6b7280;
+
+  /* Semantic Colors - Light Mode */
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-border: #e5e7eb;
+  --input-focus-border: var(--gold-500);
+
+  /* Primary Colors */
   --primary: var(--gold-500);
   --primary-dark: var(--gold-600);
   --secondary: var(--gray-800);
+
+  /* Component Specific - Light Mode */
+  --header-bg: linear-gradient(135deg, var(--gray-900), var(--gray-800));
+  --hero-bg: linear-gradient(135deg, var(--gray-900), var(--gray-800));
+  --section-alt-bg: #f9fafb;
+  --table-header-bg: #f9fafb;
+  --calculator-info-bg: var(--gold-50);
+  --calculator-info-border: var(--gold-500);
+  --tenor-btn-bg: #ffffff;
+  --tenor-btn-border: #e5e7eb;
+  --tenor-btn-active-bg: var(--gold-50);
+  --tenor-btn-active-border: var(--gold-500);
+
+  /* Text Colors - Light Mode */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-on-dark: #ffffff;
+  --text-gold: var(--gold-600);
 
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -53,19 +84,95 @@
   --radius-xl: 1rem;
   --radius-full: 9999px;
 
-  /* Shadows */
+  /* Shadows - Light Mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
+/* ========== DARK MODE ========== */
+[data-theme="dark"],
+.dark {
+  --background: #0f0f0f;
+  --background-secondary: #1a1a1a;
+  --foreground: #f9fafb;
+  --foreground-secondary: #d1d5db;
+  --foreground-muted: #9ca3af;
+
+  /* Semantic Colors - Dark Mode */
+  --card-bg: #1f1f1f;
+  --card-border: #374151;
+  --input-bg: #1f1f1f;
+  --input-border: #374151;
+  --input-focus-border: var(--gold-400);
+
+  /* Primary Colors - Dark Mode */
+  --primary: var(--gold-400);
+  --primary-dark: var(--gold-500);
+
+  /* Component Specific - Dark Mode */
+  --section-alt-bg: #1a1a1a;
+  --table-header-bg: #1a1a1a;
+  --calculator-info-bg: rgba(245, 158, 11, 0.1);
+  --calculator-info-border: var(--gold-400);
+  --tenor-btn-bg: #1f1f1f;
+  --tenor-btn-border: #374151;
+  --tenor-btn-active-bg: rgba(245, 158, 11, 0.15);
+  --tenor-btn-active-border: var(--gold-400);
+
+  /* Text Colors - Dark Mode */
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-gold: var(--gold-400);
+
+  /* Shadows - Dark Mode */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+
+  /* Override Gray Colors for Dark */
+  --gray-50: #1a1a1a;
+  --gray-100: #262626;
+  --gray-200: #374151;
+}
+
+/* System Preference Dark Mode */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
+  :root:not([data-theme="light"]) {
+    --background: #0f0f0f;
+    --background-secondary: #1a1a1a;
     --foreground: #f9fafb;
+    --foreground-secondary: #d1d5db;
+    --foreground-muted: #9ca3af;
+    --card-bg: #1f1f1f;
+    --card-border: #374151;
+    --input-bg: #1f1f1f;
+    --input-border: #374151;
+    --input-focus-border: var(--gold-400);
     --primary: var(--gold-400);
     --primary-dark: var(--gold-500);
+    --section-alt-bg: #1a1a1a;
+    --table-header-bg: #1a1a1a;
+    --calculator-info-bg: rgba(245, 158, 11, 0.1);
+    --calculator-info-border: var(--gold-400);
+    --tenor-btn-bg: #1f1f1f;
+    --tenor-btn-border: #374151;
+    --tenor-btn-active-bg: rgba(245, 158, 11, 0.15);
+    --tenor-btn-active-border: var(--gold-400);
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --text-gold: var(--gold-400);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    --gray-50: #1a1a1a;
+    --gray-100: #262626;
+    --gray-200: #374151;
   }
 }
 
@@ -262,7 +369,7 @@ body {
 
 .btn-secondary {
   background: var(--gray-200);
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .btn-secondary:hover {
@@ -327,12 +434,13 @@ body {
 }
 
 .gold-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all 0.3s;
   position: relative;
+  border: 1px solid var(--card-border);
 }
 
 .gold-card:hover {
@@ -418,7 +526,7 @@ body {
 .card-title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -454,23 +562,24 @@ body {
    INSTALLMENT CALCULATOR
    ================================ */
 .installment-calculator {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
 }
 
 .calculator-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
 
 .section-label {
   display: block;
   font-weight: 600;
-  color: var(--gray-700);
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-md);
 }
 
@@ -482,10 +591,10 @@ body {
 
 .tenor-btn {
   padding: var(--spacing-sm) var(--spacing-md);
-  border: 2px solid var(--gray-200);
+  border: 2px solid var(--tenor-btn-border);
   border-radius: var(--radius-md);
-  background: white;
-  color: var(--gray-700);
+  background: var(--tenor-btn-bg);
+  color: var(--text-secondary);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
@@ -496,9 +605,9 @@ body {
 }
 
 .tenor-btn.active {
-  border-color: var(--gold-500);
-  background: var(--gold-50);
-  color: var(--gold-700);
+  border-color: var(--tenor-btn-active-border);
+  background: var(--tenor-btn-active-bg);
+  color: var(--text-gold);
 }
 
 .calculation-breakdown {
@@ -514,12 +623,12 @@ body {
 }
 
 .calc-label {
-  color: var(--gray-600);
+  color: var(--text-muted);
 }
 
 .calc-value {
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .calc-value.highlight {
@@ -568,14 +677,14 @@ body {
 .calculator-info {
   margin-top: var(--spacing-lg);
   padding: var(--spacing-md);
-  background: var(--gold-50);
+  background: var(--calculator-info-bg);
   border-radius: var(--radius-md);
-  border-left: 4px solid var(--gold-500);
+  border-left: 4px solid var(--calculator-info-border);
 }
 
 .info-text {
   font-size: 0.875rem;
-  color: var(--gold-800);
+  color: var(--text-gold);
 }
 
 /* ================================
@@ -591,7 +700,7 @@ body {
 .table-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -624,7 +733,7 @@ body {
 
 .installment-number {
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .schedule-card .card-body {
@@ -644,7 +753,7 @@ body {
 
 .row-value {
   font-weight: 500;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .schedule-card .card-row.penalty .row-value {
@@ -694,7 +803,7 @@ body {
 }
 
 .schedule-table td {
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .schedule-table td.penalty {
@@ -738,16 +847,17 @@ body {
    PURCHASE FORM
    ================================ */
 .purchase-form {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-md);
+  border: 1px solid var(--card-border);
 }
 
 .form-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-xl);
 }
 
@@ -758,7 +868,7 @@ body {
 .form-label {
   display: block;
   font-weight: 500;
-  color: var(--gray-700);
+  color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -769,10 +879,12 @@ body {
 .form-input {
   width: 100%;
   padding: var(--spacing-md);
-  border: 2px solid var(--gray-200);
+  border: 2px solid var(--input-border);
   border-radius: var(--radius-md);
   font-size: 1rem;
   transition: all 0.2s;
+  background: var(--input-bg);
+  color: var(--text-primary);
 }
 
 .form-input:focus {
@@ -920,12 +1032,12 @@ body {
 .section-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .section-subtitle {
-  color: var(--gray-500);
+  color: var(--text-muted);
 }
 
 /* ================================
@@ -943,12 +1055,13 @@ body {
 }
 
 .feature-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   text-align: center;
   box-shadow: var(--shadow-md);
   transition: all 0.3s;
+  border: 1px solid var(--card-border);
 }
 
 .feature-card:hover {
@@ -964,12 +1077,12 @@ body {
 .feature-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .feature-description {
-  color: var(--gray-500);
+  color: var(--text-muted);
   font-size: 0.875rem;
 }
 
@@ -1034,7 +1147,7 @@ body {
 .admin-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .admin-subtitle {
@@ -1042,17 +1155,18 @@ body {
 }
 
 .admin-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-md);
   margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--card-border);
 }
 
 .admin-card-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -1075,10 +1189,11 @@ body {
 }
 
 .stat-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-sm);
+  border: 1px solid var(--card-border);
 }
 
 .stat-label {
@@ -1090,7 +1205,7 @@ body {
 .stat-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .stat-change {
@@ -1193,7 +1308,7 @@ body {
 .page-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
 }
 
 .breadcrumb {
@@ -1354,12 +1469,13 @@ body {
 }
 
 .modal {
-  background: white;
+  background: var(--card-bg);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   max-width: 400px;
   width: 100%;
   text-align: center;
+  border: 1px solid var(--card-border);
 }
 
 .modal-icon {
@@ -1370,12 +1486,12 @@ body {
 .modal-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--gray-800);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
 .modal-message {
-  color: var(--gray-500);
+  color: var(--text-muted);
   margin-bottom: var(--spacing-xl);
 }
 
